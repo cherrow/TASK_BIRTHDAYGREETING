@@ -38,7 +38,7 @@ public class Employee {
         this.firstName = firstName;
     }
 
-    private Date getBirthDate() {
+    public Date getBirthDate() {
         return birthDate;
     }
 
