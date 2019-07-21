@@ -1,0 +1,29 @@
+# idea ignore
+.idea/
+*.ipr
+*.iml
+*.iws
+
+# temp ignore
+*.log
+*.cache
+*.diff
+*.exe
+*.exe~
+*.patch
+*.tmp
+*debug.test
+
+# project
+*.cert
+*.key
+.test
+iprepo.txt
+
+app/*/*/cmd/cmd
+app/*/*/*/cmd/cmd
+app/*/*/cmd/debug
+app/*/*/*/cmd/debug
+app/tool/kratos/kratos
+
+_output
