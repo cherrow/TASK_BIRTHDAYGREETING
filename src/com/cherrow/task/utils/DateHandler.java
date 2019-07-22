@@ -12,7 +12,7 @@ public class DateHandler {
         try{
             return formatter.parse(birthdate);
         }catch (ParseException e){
-            throw new RuntimeException("日期转换出错, date:"+ birthdate);
+            throw new RuntimeException("日期转换出错, date:"+ birthdate , e);
         }
     }
 
