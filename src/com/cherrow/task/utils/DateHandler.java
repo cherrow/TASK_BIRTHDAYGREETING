@@ -12,8 +12,13 @@ public class DateHandler {
         try{
             return formatter.parse(birthdate);
         }catch (ParseException e){
-            throw new RuntimeException("日期转换出错");
+            throw new RuntimeException("日期转换出错, date:"+ birthdate);
         }
+    }
+
+    public static String formatDateToString(Date date) {
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
+        return formatter.format(date);
     }
 
     public static boolean isSameMonthDateWithNow(Date date){
