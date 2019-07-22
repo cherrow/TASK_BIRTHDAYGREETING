@@ -57,4 +57,10 @@ public class Employee {
     public boolean todayIsBirthday(){
         return DateHandler.isSameMonthDateWithNow(getBirthDate());
     }
+
+    @Override
+    public String toString(){
+        return String.format("Name: %s,%s; Birthday: %s; Email: %s"
+                ,getLastName(),getFirstName(),DateHandler.formatDateToString(getBirthDate()),getEmailAddress());
+    }
 }
