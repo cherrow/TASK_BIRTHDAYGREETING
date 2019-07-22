@@ -1,5 +1,6 @@
 package com.cherrow.task.utils;
 
+import com.cherrow.task.config.TaskConfiguration;
 import com.cherrow.task.model.Employee;
 
 import java.io.IOException;
@@ -16,21 +17,22 @@ public class FileHandler {
     private static final int MIN_LINE_COUNT = 2;
 
     public static List<Employee> convertFileToEmployee(){
-        String fileName = "C:\\Users\\Lenovo\\Desktop\\hello.txt";
         //读取文件
         List<String[]> lineLists;
         try {
-            lineLists = Files.lines(Paths.get(fileName), Charset.defaultCharset())
+            lineLists = Files.lines(Paths.get(TaskConfiguration.FILE_PATH), Charset.defaultCharset())
                     .map(line->line.split(","))
                     .collect(toList());
         } catch (IOException e) {
-            throw new RuntimeException("文件读取出错");
+            throw new RuntimeException("文件读取出错", e);
         }
 
         if(lineLists.size() < MIN_LINE_COUNT){
             return Collections.emptyList();
         }
 
+        //去除列名
+        lineLists.remove(0);
         return lineLists.stream()
                 .map(line->new Employee(line[0],line[1],DateHandler.formatStringToDate(line[2]),line[3]))
                 .collect(toList());
