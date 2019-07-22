@@ -20,5 +20,4 @@ public class BirthdayGreeting {
                 .filter(EmailHandler::sendEmail)
                 .count();
     }
-
 }
