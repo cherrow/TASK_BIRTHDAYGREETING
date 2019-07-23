@@ -7,10 +7,10 @@ import java.util.Date;
 public class Employee {
 
     public Employee(String lastName, String firstName, Date birthDate, String emailAddress){
-        setLastName(lastName);
-        setFirstName(firstName);
-        setBirthDate(birthDate);
-        setEmailAddress(emailAddress);
+        this.lastName = lastName.trim();
+        this.firstName = firstName.trim();
+        this.birthDate = birthDate;
+        this.emailAddress = emailAddress.trim();
     }
 
     private String lastName;
