@@ -1,4 +1,4 @@
-package test;
+package test.utils;
 
 import com.cherrow.task.config.TaskConfiguration;
 import com.cherrow.task.utils.FileHandler;

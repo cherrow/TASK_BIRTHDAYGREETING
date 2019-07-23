@@ -1,4 +1,4 @@
-package test;
+package test.utils;
 
 import com.cherrow.task.model.Employee;
 import com.cherrow.task.utils.EmailHandler;

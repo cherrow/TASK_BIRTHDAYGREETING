@@ -1,4 +1,4 @@
-package test;
+package test.greeting;
 
 import com.cherrow.task.greeting.BirthdayGreeting;
 import com.cherrow.task.model.Employee;

@@ -1,4 +1,4 @@
-package test;
+package test.utils;
 
 import com.cherrow.task.utils.DateHandler;
 import org.junit.Rule;
