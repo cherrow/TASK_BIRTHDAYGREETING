@@ -9,7 +9,7 @@ import java.util.List;
 public class Application {
 
     public static void main(String[] args){
-        TaskConfiguration.FILE_PATH = "E:\\work\\JAVA\\IdeaProjects\\employee_records.txt";
+        TaskConfiguration.FILE_PATH = System.getProperty("user.dir") + "\\employee_records.txt";
 
         List<Employee> birthdayEmployee = BirthdayGreeting.getIsBirthdayEmployee();
         System.out.println("共有 " + birthdayEmployee.size() + " 人今天生日：");
