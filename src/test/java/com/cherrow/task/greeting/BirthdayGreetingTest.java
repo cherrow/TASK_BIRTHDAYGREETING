@@ -1,4 +1,4 @@
-package test.greeting;
+package com.cherrow.task.greeting;
 
 import com.cherrow.task.greeting.BirthdayGreeting;
 import com.cherrow.task.model.Employee;
@@ -7,7 +7,6 @@ import org.junit.Test;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import static org.junit.Assert.*;

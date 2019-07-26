@@ -12,7 +12,6 @@ public class EmailHandler {
     public static boolean sendEmail(Employee receiver){
         String host = "smtp.qq.com";
         String from = "1312745053@qq.com";
-
         Properties properties = System.getProperties();
         properties.setProperty("mail.smtp.host", host);
         properties.put("mail.smtp.auth", "true");

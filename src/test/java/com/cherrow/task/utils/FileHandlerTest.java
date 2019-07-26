@@ -1,7 +1,6 @@
-package test.utils;
+package com.cherrow.task.utils;
 
 import com.cherrow.task.config.TaskConfiguration;
-import com.cherrow.task.utils.FileHandler;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;

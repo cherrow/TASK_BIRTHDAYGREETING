@@ -18,12 +18,10 @@
 *.cert
 *.key
 .test
-iprepo.txt
-
-app/*/*/cmd/cmd
-app/*/*/*/cmd/cmd
-app/*/*/cmd/debug
-app/*/*/*/cmd/debug
-app/tool/kratos/kratos
 
 _output
+
+# Ignore Gradle project-specific cache directory
+
+# Ignore Gradle build output directory
+build

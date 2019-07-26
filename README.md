@@ -2,10 +2,10 @@
 从 txt 文档中获取当天生日的所有员工，并给他们发送指定文本的邮件。
 
 # 项目配置
-全局配置类：/src/com/cherrow/task/config/TaskConfiguration
+全局配置类：/src/com/cherrow/com/config/TaskConfiguration
 
 # 项目启动
-启动类为：/src/com/cherrow/task/Application
+启动类为：/src/com/cherrow/com/Application
 
 # 项目依赖
 activation.jar  
