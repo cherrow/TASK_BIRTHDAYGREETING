@@ -1,15 +1,16 @@
 package com.cherrow.task.model;
 
-import com.cherrow.task.utils.DateHandler;
+import com.cherrow.task.utils.DateUtil;
+import lombok.Getter;
+import lombok.Setter;
 
-import java.util.Date;
-
+@Getter
 public class Employee {
 
-    public Employee(String lastName, String firstName, Date birthDate, String emailAddress){
+    public Employee(String lastName, String firstName, String birthDate, String emailAddress){
         this.lastName = lastName.trim();
         this.firstName = firstName.trim();
-        this.birthDate = birthDate;
+        this.birthDate = birthDate.trim();
         this.emailAddress = emailAddress.trim();
     }
 
@@ -17,50 +18,18 @@ public class Employee {
 
     private String firstName;
 
-    private Date birthDate;
+    private String birthDate;
 
+    @Setter
     private String emailAddress;
 
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    private void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    private void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public Date getBirthDate() {
-        return birthDate;
-    }
-
-    private void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
-    }
-
-    public String getEmailAddress() {
-        return emailAddress;
-    }
-
-    public void setEmailAddress(String emailAddress) {
-        this.emailAddress = emailAddress;
-    }
-
     public boolean todayIsBirthday(){
-        return DateHandler.isSameMonthDateWithNow(getBirthDate());
+        return DateUtil.isSameMonthDayWithNow(birthDate);
     }
 
     @Override
     public String toString(){
         return String.format("Name: %s,%s; Birthday: %s; Email: %s"
-                ,getLastName(),getFirstName(),DateHandler.formatDateToString(getBirthDate()),getEmailAddress());
+                ,lastName,firstName, birthDate,emailAddress);
     }
 }
