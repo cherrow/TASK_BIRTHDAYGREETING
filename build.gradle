@@ -1,19 +1,11 @@
+plugins {
+    id "net.ltgt.apt" version "0.21"
+}
 
-apply plugin: 'java'
+apply plugin: 'application'
 apply plugin: 'idea'
 
-sourceSets {
-    main{
-        java {
-            srcDirs = ['src/main/java']
-        }
-    }
-    test{
-        java {
-            srcDirs = ['src/test/java']
-        }
-    }
-}
+mainClassName ='Application'
 
 repositories {
     maven{ url'http://maven.aliyun.com/nexus/content/groups/public/'}
@@ -21,10 +13,10 @@ repositories {
 }
 
 dependencies {
-    compile 'javax.activation:activation:1.1.1'
-    compile 'javax.mail:mail:1.4'
     compileOnly 'org.projectlombok:lombok:1.18.2'
-    testCompile 'junit:junit:4.12'
+    annotationProcessor 'org.projectlombok:lombok:1.18.2'
+
+    testImplementation 'junit:junit:4.12'
 }
 
 tasks.withType(JavaCompile) {
