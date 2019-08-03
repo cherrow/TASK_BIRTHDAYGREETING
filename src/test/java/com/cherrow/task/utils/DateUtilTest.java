@@ -1,14 +1,15 @@
 package com.cherrow.task.utils;
 
-import com.cherrow.task.utils.DateHandler;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-import java.util.Date;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import static org.junit.Assert.*;
 
-public class DateHandlerTest {
+public class DateUtilTest {
 
     @Rule
     public ExpectedException expectedException = ExpectedException.none();
@@ -20,16 +21,12 @@ public class DateHandlerTest {
         expectedException.expect(RuntimeException.class);
         expectedException.expectMessage("日期转换出错, date:"+ invalidDate);
 
-        DateHandler.formatStringToDate(invalidDate);
+        DateUtil.isSameMonthDayWithNow(invalidDate);
     }
 
-    @Test
-    public void should_get_expected_string_giving_date() {
-        assertEquals("2019/07/23", DateHandler.formatDateToString(new Date()));
-    }
-
-    @Test
-    public void should_get_true_giving_today() {
-        assertTrue(DateHandler.isSameMonthDateWithNow(new Date()));
+    @Test    public void should_return_true_giving_today() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+        String today = LocalDateTime.now().format(formatter);
+        assertTrue(DateUtil.isSameMonthDayWithNow(today));
     }
 }

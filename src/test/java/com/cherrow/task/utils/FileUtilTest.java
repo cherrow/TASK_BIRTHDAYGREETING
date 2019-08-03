@@ -9,7 +9,7 @@ import java.util.Collections;
 
 import static org.junit.Assert.*;
 
-public class FileHandlerTest {
+public class FileUtilTest {
 
     @Rule
     public ExpectedException expectedException = ExpectedException.none();
@@ -17,7 +17,7 @@ public class FileHandlerTest {
     @Test
     public void should_get_an_empty_list_giving_one_line_file() {
         TaskConfiguration.FILE_PATH = System.getProperty("user.dir") + "\\employee_records_one_line.txt";
-        assertEquals(Collections.emptyList(),FileHandler.convertFileToEmployee());
+        assertEquals(Collections.emptyList(), FileUtil.convertFileToEmployee());
     }
 
     @Test
@@ -26,6 +26,6 @@ public class FileHandlerTest {
         expectedException.expectMessage("文件读取出错");
 
         TaskConfiguration.FILE_PATH = "D:\\invalid\\path\\employee_records.txt";
-        FileHandler.convertFileToEmployee();
+        FileUtil.convertFileToEmployee();
     }
 }
