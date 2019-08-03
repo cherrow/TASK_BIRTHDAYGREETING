@@ -12,7 +12,7 @@ import java.util.List;
 
 import static java.util.stream.Collectors.toList;
 
-public class FileHandler {
+public class FileUtil {
 
     private static final int MIN_LINE_COUNT = 2;
 
@@ -34,7 +34,7 @@ public class FileHandler {
         //去除列名
         lineLists.remove(0);
         return lineLists.stream()
-                .map(line->new Employee(line[0],line[1],DateHandler.formatStringToDate(line[2]),line[3]))
+                .map(line->new Employee(line[0],line[1], line[2],line[3]))
                 .collect(toList());
     }
 }
