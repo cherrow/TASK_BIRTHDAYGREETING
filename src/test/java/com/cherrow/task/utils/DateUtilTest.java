@@ -7,7 +7,7 @@ import org.junit.rules.ExpectedException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 public class DateUtilTest {
 
@@ -19,12 +19,13 @@ public class DateUtilTest {
         String invalidDate = "1956///12/26";
 
         expectedException.expect(RuntimeException.class);
-        expectedException.expectMessage("日期转换出错, date:"+ invalidDate);
+        expectedException.expectMessage("日期转换出错, date:" + invalidDate);
 
         DateUtil.isSameMonthDayWithNow(invalidDate);
     }
 
-    @Test    public void should_return_true_giving_today() {
+    @Test
+    public void should_return_true_giving_today() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
         String today = LocalDateTime.now().format(formatter);
         assertTrue(DateUtil.isSameMonthDayWithNow(today));
