@@ -12,29 +12,33 @@ import java.util.List;
 
 import static java.util.stream.Collectors.toList;
 
-public class FileUtil {
+public final class FileUtil {
+
+    private FileUtil() {
+
+    }
 
     private static final int MIN_LINE_COUNT = 2;
 
-    public static List<Employee> convertFileToEmployee(){
+    public static List<Employee> convertFileToEmployee() {
         //读取文件
         List<String[]> lineLists;
         try {
-            lineLists = Files.lines(Paths.get(TaskConfiguration.FILE_PATH), Charset.defaultCharset())
-                    .map(line->line.split(","))
+            lineLists = Files.lines(Paths.get(TaskConfiguration.getFilePath()), Charset.defaultCharset())
+                    .map(line -> line.split(","))
                     .collect(toList());
         } catch (IOException e) {
             throw new RuntimeException("文件读取出错", e);
         }
 
-        if(lineLists.size() < MIN_LINE_COUNT){
+        if (lineLists.size() < MIN_LINE_COUNT) {
             return Collections.emptyList();
         }
 
         //去除列名
         lineLists.remove(0);
         return lineLists.stream()
-                .map(line->new Employee(line[0],line[1], line[2],line[3]))
+                .map(line -> new Employee(line[0], line[1], line[2], line[3]))
                 .collect(toList());
     }
 }

@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 public class Employee {
 
-    public Employee(String lastName, String firstName, String birthDate, String emailAddress){
+    public Employee(String lastName, String firstName, String birthDate, String emailAddress) {
         this.lastName = lastName.trim();
         this.firstName = firstName.trim();
         this.birthDate = birthDate.trim();
@@ -23,13 +23,12 @@ public class Employee {
     @Setter
     private String emailAddress;
 
-    public boolean todayIsBirthday(){
+    public boolean todayIsBirthday() {
         return DateUtil.isSameMonthDayWithNow(birthDate);
     }
 
     @Override
-    public String toString(){
-        return String.format("Name: %s,%s; Birthday: %s; Email: %s"
-                ,lastName,firstName, birthDate,emailAddress);
+    public String toString() {
+        return String.format("Name: %s,%s; Birthday: %s; Email: %s", lastName, firstName, birthDate, emailAddress);
     }
 }

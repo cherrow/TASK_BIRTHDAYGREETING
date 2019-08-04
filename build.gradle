@@ -1,20 +1,24 @@
 plugins {
     id "net.ltgt.apt" version "0.21"
+    id 'checkstyle'
 }
 
 apply plugin: 'application'
 apply plugin: 'idea'
 
-mainClassName ='Application'
+mainClassName = 'com.cherrow.task/Application'
 
 repositories {
-    maven{ url'http://maven.aliyun.com/nexus/content/groups/public/'}
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
     mavenCentral()
 }
 
 dependencies {
-    compileOnly 'org.projectlombok:lombok:1.18.2'
-    annotationProcessor 'org.projectlombok:lombok:1.18.2'
+    implementation 'org.slf4j:slf4j-api:1.7.5'
+    implementation 'org.slf4j:slf4j-simple:1.7.5'
+
+    compileOnly 'org.projectlombok:lombok:1.18.8'
+    annotationProcessor 'org.projectlombok:lombok:1.18.8'
 
     testImplementation 'junit:junit:4.12'
 }

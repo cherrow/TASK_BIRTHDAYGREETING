@@ -5,9 +5,13 @@ import java.time.MonthDay;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
-public class DateUtil {
+public final class DateUtil {
 
-    public static boolean isSameMonthDayWithNow(String date){
+    private DateUtil() {
+
+    }
+
+    public static boolean isSameMonthDayWithNow(String date) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
         try {
             LocalDate birthDay = LocalDate.parse(date, formatter);
@@ -15,8 +19,8 @@ public class DateUtil {
             MonthDay birthMonthDay = MonthDay.from(birthDay);
             MonthDay currentMonthDay = MonthDay.from(today);
             return birthMonthDay.equals(currentMonthDay);
-        }catch (DateTimeParseException e){
-            throw new RuntimeException("日期转换出错, date:"+ date , e);
+        } catch (DateTimeParseException e) {
+            throw new RuntimeException("日期转换出错, date:" + date, e);
         }
     }
 }
