@@ -1,7 +1,18 @@
 package com.cherrow.task.config;
 
-public class TaskConfiguration {
+public final class TaskConfiguration {
 
-    public static String FILE_PATH =  System.getProperty("user.dir") + "\\employee_records.txt";
+    private TaskConfiguration() {
 
+    }
+
+    private static String filePath =  System.getProperty("user.dir") + "\\employee_records.txt";
+
+    public static String getFilePath() {
+        return filePath;
+    }
+
+    public static void setFilePath(final String path) {
+        filePath = path;
+    }
 }
